@@ -16,3 +16,6 @@ def set_random_key(seed):
 
 def antiCategorical(arr):
     return jnp.argmax(arr, axis=1)
+
+def toCategorical(arr, num_classes):
+    return jnp.eye(num_classes)[arr]
