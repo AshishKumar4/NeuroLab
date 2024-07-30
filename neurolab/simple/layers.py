@@ -30,6 +30,7 @@ def checkNan(arr, name):
 
 class Dense(Layer):
     def __init__(self, n_input, n_output, use_bias=True):
+        super(Dense, self).__init__()
         self.weights = jax.random.normal(get_random_key(), (n_input, n_output), jnp.float64) * (1/float(math.sqrt(n_input)))
         self.biases = jnp.zeros((1, n_output)).astype(jnp.float64)
         self.use_bias = use_bias
